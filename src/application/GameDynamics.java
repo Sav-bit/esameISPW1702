@@ -23,7 +23,7 @@ public class GameDynamics {
 	}
 	
 	public boolean tryWord(String guess) {
-		return this.keyword == guess;
+		return this.keyword.equals(guess);
 	}
 	
 	

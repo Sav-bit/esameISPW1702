@@ -22,21 +22,23 @@ public class Main extends Application {
 			GameDynamics thisGame = new GameDynamics();
 			
 			VBox root = new VBox();
-			Scene scene = new Scene(root,320, 480);
+			Scene scene = new Scene(root,1520, 480);
 			primaryStage.setScene(scene);
 			TextField calculatorDisplay = new TextField();
 			calculatorDisplay.setPrefHeight(80);
+			calculatorDisplay.setPrefWidth(1000);
 			
 			//declaring the first row
 			HBox zerothRow = new HBox();
 			Button buttonTry = new Button("Prova parola");
 			buttonTry.setPrefHeight(80);
+			
 			buttonTry.setOnAction(new EventHandler<ActionEvent>() {
 					public void handle(ActionEvent event) {
 						if (thisGame.tryWord(calculatorDisplay.getText()))
 							calculatorDisplay.setText("hai vinto!");
 						else
-							calculatorDisplay.setText("Parola sbagliata, la parola ha "+thisGame.getLen());
+							calculatorDisplay.setText("Parola sbagliata, la parola ha "+thisGame.getLen()+" lettere!");
 					}
 			});
 			
